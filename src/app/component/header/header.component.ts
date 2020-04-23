@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodosService } from '../../services/todos.service';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   value = '';
 
-  constructor() { }
+  constructor(private todosService: TodosService) { }
 
   ngOnInit() {
   }
 
   onKeyUpEnter(value: string) {
-    const trimValue = value.trim()
-    if (trimValue) {
-      console.log(trimValue);
+    const label = value.trim()
+    if (label) {
+      this.todosService.addTodo(label)
       this.value = '';
     }
   }
