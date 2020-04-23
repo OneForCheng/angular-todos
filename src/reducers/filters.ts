@@ -1,16 +1,17 @@
 import ACTION_TYPES from '../constants/actions';
+import FILTER_TYPES from '../constants/filterTypes';
 
 const initState = [
   {
-    label: 'All',
+    label: FILTER_TYPES.ALL,
     selected: true
   },
   {
-    label: 'Completed',
+    label: FILTER_TYPES.COMPLETED,
     selected: false
   },
   {
-    label: 'Active',
+    label: FILTER_TYPES.ACTIVE,
     selected: false
   }
 ];
