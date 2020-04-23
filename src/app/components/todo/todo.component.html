@@ -1,0 +1,18 @@
+<li [class]="(todo.completed ? 'completed' : '') + (editing ? ' editing' : '')">
+  <div class="view">
+    <input
+      class="toggle"
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="toggleTodo(todo.id)"
+    />
+    <label (dblclick)="toggleEditing()">{{todo.label}}</label>
+    <button class="destroy" (click)="removeTodo(todo.id)" ></button>
+  </div>
+  <input
+    #edit
+    class="edit"
+    [value]="todo.label"
+    (keyup.enter)="updateTodo(todo.id, edit.value)"
+  />
+</li>
