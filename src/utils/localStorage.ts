@@ -1,4 +1,4 @@
-const TODOS_STATE_KEY = 'TODOS_STATE_KEY'
+const TODOS_STATE_KEY = 'TODOS_STATE_KEY';
 
 export const loadStateFromLocalStorage = () => {
   try {
@@ -10,7 +10,7 @@ export const loadStateFromLocalStorage = () => {
 
     return undefined;
   } catch (err) {
-    console.log('[loadStateFromLocalStorage-exception]: ', err)
+    console.log('[loadStateFromLocalStorage-exception]: ', err);
     return undefined;
   }
 };
