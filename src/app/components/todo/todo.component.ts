@@ -4,7 +4,7 @@ import { TodosService } from '../../services/todos.service';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  styleUrls: ['./todo.component.less']
 })
 export class TodoComponent {
   editing = false;

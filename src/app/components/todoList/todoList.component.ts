@@ -6,7 +6,7 @@ import { getFilterTodos } from '../../../utils/transform';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todoList.component.html',
-  styleUrls: ['./todoList.component.css']
+  styleUrls: ['./todoList.component.less']
 })
 export class TodoListComponent implements OnInit, OnDestroy {
 
