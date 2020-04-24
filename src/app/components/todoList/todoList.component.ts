@@ -36,6 +36,10 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this.todosService.toggleAll(checked);
   }
 
+  trackById(index: number, item: ITodo){
+    return item.id;
+  }
+
   ngOnDestroy() {
     this.unsubscribe();
   }

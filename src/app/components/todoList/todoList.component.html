@@ -9,6 +9,6 @@
   />
   <label for="toggle-all">Mark all as complete</label>
   <ul class="todo-list">
-    <app-todo *ngFor="let todo of filterTodos" [todo]="todo"></app-todo>
+    <app-todo *ngFor="let todo of filterTodos; trackBy: trackById" [todo]="todo"></app-todo>
   </ul>
 </section>
