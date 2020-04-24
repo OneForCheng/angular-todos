@@ -9,7 +9,7 @@ import { TodosService } from '../../services/todos.service';
 export class TodoComponent {
   editing = false;
 
-  @Input() todo: ITodo
+  @Input() todo: ITodo;
 
   constructor(private todosService: TodosService) {}
 

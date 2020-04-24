@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
 
 @Component({
@@ -6,18 +6,15 @@ import { TodosService } from '../../services/todos.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   value = '';
 
   constructor(private todosService: TodosService) { }
 
-  ngOnInit() {
-  }
-
   onKeyUpEnter(value: string) {
-    const label = value.trim()
+    const label = value.trim();
     if (label) {
-      this.todosService.addTodo(label)
+      this.todosService.addTodo(label);
       this.value = '';
     }
   }
