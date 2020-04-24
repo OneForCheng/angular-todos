@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { TodosService } from '../../services/todos.service';
 export class HeaderComponent {
   value = '';
 
+  @ViewChild('input', { read: ElementRef }) inputEl: ElementRef;
+
   constructor(private todosService: TodosService) { }
 
   onKeyUpEnter(value: string) {
@@ -16,6 +18,11 @@ export class HeaderComponent {
     if (label) {
       this.todosService.addTodo(label);
       this.value = '';
+
+      // set focus for input again
+      setTimeout(() => {
+        this.inputEl.nativeElement.focus();
+      }, 500);
     }
   }
 }
