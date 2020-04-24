@@ -11,6 +11,14 @@ export class TodoComponent {
 
   @Input() todo: ITodo;
 
+  get className() {
+    let className = this.todo.completed ? 'completed' : '';
+    if (this.editing) {
+      className += ' editing';
+    }
+    return className;
+  }
+
   constructor(private todosService: TodosService) {}
 
   toggleTodo(id: number) {
